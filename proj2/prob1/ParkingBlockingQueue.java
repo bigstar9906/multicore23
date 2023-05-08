@@ -1,6 +1,16 @@
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
+
+public class ParkingBlockingQueue {
+    public static void main(String[] args){
+
+        ParkingGarage parkingGarage = new ParkingGarage(7);
+        for (int i=1; i<= 10; i++) {
+            Car c = new Car("Car "+i, parkingGarage);
+        }
+    }
+}
 class ParkingGarage {
     private BlockingQueue<Integer> place;
     public ParkingGarage(int places) {
@@ -76,13 +86,4 @@ class Car extends Thread {
 }
 
 
-public class ParkingBlockingQueue {
-    public static void main(String[] args){
-
-        ParkingGarage parkingGarage = new ParkingGarage(7);
-        for (int i=1; i<= 10; i++) {
-            Car c = new Car("Car "+i, parkingGarage);
-        }
-    }
-}
 
